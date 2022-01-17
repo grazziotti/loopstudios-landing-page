@@ -1,0 +1,82 @@
+@use 'vars';
+
+%link {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 0 1.6rem;
+    font-family: vars.$body-font;
+    font-size: 1.5rem;
+    color: vars.$white;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 30%; 
+        height: 2px;
+        transform: scaleX(0);
+        background-color: vars.$white;
+        transition: .2s;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+.container {
+    max-width: 144rem;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15rem;
+}
+
+.header {
+    height: 65rem;
+    background-image: url('../images/desktop/image-hero.jpg');
+    background-size: cover;
+
+    &__content {
+        height: 100%;
+        padding: 6.4rem 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+
+        &__list {
+            display: flex;
+            transform: translateY(7px);
+        }
+
+        &__item {
+            display: flex;
+        }
+
+        &__link {
+            @extend %link;
+        }
+    }
+
+    &__hero {
+        display: flex;
+        align-items: center;
+        width: 58%;
+        height: 100%;
+
+        &__heading {
+            padding: 4rem 4rem 2.6rem 4rem;
+            font-family: vars.$title-font;
+            font-size: 7rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1;
+            border: 2px solid vars.$white;
+            color: vars.$white;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header__nav__link {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 0 1.6rem;
+  font-family: "Alata", sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+.header__nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 30%;
+  height: 2px;
+  transform: scaleX(0);
+  background-color: #ffffff;
+  transition: 0.2s;
+}
+.header__nav__link:hover::after {
+  transform: scaleX(1);
+}
+
+.container {
+  max-width: 144rem;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 15rem;
+}
+
+.header {
+  height: 65rem;
+  background-image: url("../images/desktop/image-hero.jpg");
+  background-size: cover;
+}
+.header__content {
+  height: 100%;
+  padding: 6.4rem 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+}
+.header__nav__list {
+  display: flex;
+  transform: translateY(7px);
+}
+.header__nav__item {
+  display: flex;
+}
+.header__hero {
+  display: flex;
+  align-items: center;
+  width: 58%;
+  height: 100%;
+}
+.header__hero__heading {
+  padding: 4rem 4rem 2.6rem 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 7rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=style.css.map */
