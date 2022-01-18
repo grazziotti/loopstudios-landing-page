@@ -1,11 +1,24 @@
 @use 'vars';
 
+.section-title {
+    font-family: vars.$title-font;
+    font-weight: 300;
+    font-size: 4.8rem;
+    text-transform: uppercase;
+}
+
+.body-text {
+    font-family: vars.$body-font;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
 %link {
     display: flex;
     justify-content: center;
     position: relative;
     padding: 0 1.6rem;
-    font-family: vars.$body-font;
     font-size: 1.5rem;
     color: vars.$white;
 
@@ -26,10 +39,9 @@
 }
 
 .container {
-    max-width: 144rem;
+    max-width: 114rem;
     height: 100%;
     margin: 0 auto;
-    padding: 0 15rem;
 }
 
 .header {
@@ -64,19 +76,42 @@
     &__hero {
         display: flex;
         align-items: center;
-        width: 58%;
+        max-width: 67rem;
         height: 100%;
 
-        &__heading {
+        .section-title {
             padding: 4rem 4rem 2.6rem 4rem;
-            font-family: vars.$title-font;
-            font-size: 7rem;
-            font-weight: 300;
-            text-transform: uppercase;
+            font-size: 7.2rem;
             letter-spacing: 1.5px;
-            line-height: 1;
             border: 2px solid vars.$white;
             color: vars.$white;
+        }
+    }
+}
+
+.about {
+    &__container {
+        display: flex;
+        position: relative;
+        margin-top: 16.2rem;
+    }
+
+    &__img {
+        max-width: 73rem;
+    }
+
+    &__text-content {
+        position: absolute;
+        right: 0;
+        max-width: 57rem;
+        padding: 9.7rem;
+        padding-right: 2.2rem;
+        transform: translateY(44%);
+        background-color: vars.$white;
+
+        .body-text{
+            margin-top: 2.4rem;
+            color: vars.$dark-gray;
         }
     }
 }
