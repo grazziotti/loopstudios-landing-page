@@ -1,0 +1,11 @@
+@use 'vars';
+
+@mixin title {
+    font-family: vars.$title-font;
+    font-weight: 300;
+}
+
+@mixin body-text {
+    font-family: vars.$body-font;
+    font-weight: 400;
+}
