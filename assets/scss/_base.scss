@@ -13,19 +13,17 @@
     line-height: 1.6;
 }
 
-%link {
+%link-hover-effect {
     display: flex;
     justify-content: center;
     position: relative;
-    padding: 0 1.6rem;
-    font-size: 1.5rem;
-    color: vars.$white;
+    height: 3.4rem;
 
     &::after {
         content: '';
         position: absolute;
         bottom: 0;
-        width: 30%; 
+        width: 2.4rem; 
         height: 2px;
         transform: scaleX(0);
         background-color: vars.$white;
@@ -35,6 +33,13 @@
     &:hover::after {
         transform: scaleX(1);
     }
+}
+
+%link {
+    padding: 0 1.6rem;
+    color: vars.$white;
+
+    @extend %link-hover-effect
 }
 
 .container {
@@ -60,15 +65,17 @@
 
         &__list {
             display: flex;
-            transform: translateY(7px);
-        }
-
-        &__item {
-            display: flex;
+            transform: translateY(5px);
         }
 
         &__link {
             @extend %link;
+        }
+
+        &__item:last-child {
+            a {
+                padding-right: 0;
+            }
         }
     }
 
@@ -117,6 +124,8 @@
 }
 
 .creations {
+    padding-bottom: 16.2rem;
+
     &__header {
         display: flex;
         justify-content: space-between;
@@ -142,7 +151,7 @@
 
     &__cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(auto, 26rem));
         gap: 3rem;
         margin-top: 8rem;
     }
@@ -156,17 +165,17 @@
             align-items: flex-end;
             width: 100%;
             height: 100%;
-            padding: 0 5.6rem 4rem 4.8rem ;
+            padding: 3.2rem 4rem;
             transition: .3s;
             @include mixins.title;
-            font-size: 2.8rem;
+            font-size: 3rem;
             text-transform: uppercase;
-            background-color: rgba(0, 0, 0, .1);
+            background-color: rgba(0, 0, 0, .3);
             color: vars.$white;
             letter-spacing: 1.5px;
 
             &:hover {
-                background-color: rgba(255, 255, 255, .8);
+                background-color: rgba(255, 255, 255, .7);
                 color: vars.$black;
             }
         }
@@ -195,5 +204,73 @@
     }
     &__card:nth-child(8) {
         background-image: url('../images/desktop/image-fisheye.jpg');
+    }
+}
+
+.footer {
+    background-color: vars.$black;
+    padding: 4.8rem 0;
+
+    .container {
+        display: grid;
+        gap: 1.8rem;
+        grid-template-areas: 
+            'item1 item3'
+            'item2 item4'        
+        ;
+    }
+
+    .logo {
+        display: inline-block;
+        grid-area: item1;
+        max-width: 14.5rem;
+    }
+
+    &__nav {
+        grid-area: item2;
+        height: 3.4rem;
+
+        &__list {
+            display: flex;
+            align-items: center;
+        }
+    
+        &__link {
+            @extend %link
+        }
+
+        &__item:first-child {
+            a {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: flex-end;
+        grid-area: item3;
+
+        &__list {
+            display: flex;
+            align-items: center;
+        }
+
+        &__icon {
+            padding: 0 8px;
+            @extend %link-hover-effect
+        }
+
+        &__item:last-child {
+            .footer__socials__icon {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &__copyright {
+        grid-area: item4;
+        text-align: end;
+        color: vars.$dark-gray;
     }
 }
