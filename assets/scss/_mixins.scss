@@ -3,9 +3,22 @@
 @mixin title {
     font-family: vars.$title-font;
     font-weight: 300;
+    text-transform: uppercase;
 }
 
 @mixin body-text {
     font-family: vars.$body-font;
     font-weight: 400;
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width: 690px) {
+        @content;
+    }
 }
