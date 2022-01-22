@@ -17,7 +17,7 @@
 .body-text {
     @include mixins.body-text;
     font-size: 1.5rem;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 %link-hover-effect {
@@ -54,11 +54,10 @@
 }
 
 .container {
-    max-width: 118.8rem;
+    max-width: 116rem;
     height: 100%;
     margin: 0 auto;
     padding: 0 2.4rem;
-    
 }
 
 .header {
@@ -200,14 +199,15 @@
     &__hero {
         display: flex;
         align-items: center;
-        max-width: 67rem;
+        max-width: 65rem;
         height: 100%;
 
         &__heading {
             @include mixins.title;
-            padding: 4rem 4rem 2.6rem 4rem;
-            font-size: 7.2rem;
-            letter-spacing: 1.5px;
+            padding: 4rem 4rem 2.4rem 4rem;
+            font-size: 7rem;
+            line-height: 1;
+            letter-spacing: 1.1px;
             border: 2px solid vars.$white;
             color: vars.$white;
 
@@ -253,10 +253,10 @@
     &__text-content {
         position: absolute;
         right: 0;
-        max-width: 57rem;
-        padding: 9.7rem;
-        padding-right: 2.2rem;
-        transform: translateY(44%);
+        max-width: 56.9rem;
+        padding: 9.2rem 0 4.8rem 9.6rem;
+        padding-right: inherit;
+        transform: translateY(50%);
         background-color: vars.$white;
 
         .body-text{
@@ -275,7 +275,7 @@
 }
 
 .creations {
-    margin-top: 16.2rem;
+    margin-top: 18.8rem;
 
     @include mixins.tablet {
         margin-top: 8rem;
@@ -305,8 +305,9 @@
     &__btn {
         grid-area: btn;
         justify-self: end;
-        width: 15rem;
-        padding: 8px 0;
+        align-self: start;
+        width: 16rem;
+        padding: 6px 0;
         font-size: 1.5rem;
         text-align: center;
         text-transform: uppercase;
@@ -329,10 +330,10 @@
     &__cards {
         grid-area: cards;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 3rem;
+        grid-template-columns: repeat(auto-fit, 25.6rem);
+        gap: 2.8rem;
         width: 100%;
-        margin-top: 4.8rem;
+        margin-top: 7rem;
 
         @include mixins.tablet {
             grid-template-columns: repeat(2, 1fr); 
@@ -345,6 +346,7 @@
     }
 
     &__card {
+        min-width: 25.6rem;
         height: 45rem;
         background-size: cover;
 
@@ -356,14 +358,13 @@
             padding: 3.2rem 4rem;
             transition: .3s;
             @include mixins.title;
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             text-transform: uppercase;
-            background-color: rgba(0, 0, 0, .3);
+            background: linear-gradient(0deg, rgba(0, 0, 0, .6), transparent);
             color: vars.$white;
-            letter-spacing: 1.5px;
 
             &:hover {
-                background-color: rgba(255, 255, 255, .7);
+                background: rgba(255, 255, 255, .7);
                 color: vars.$black;
             }
 
@@ -430,7 +431,7 @@
 
 .footer {
     background-color: vars.$black;
-    margin-top: 16.2rem;
+    margin-top: 18.8rem;
     padding-top: 4.8rem;
     padding-bottom: 1.6rem;
 
